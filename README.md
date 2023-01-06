@@ -6,3 +6,6 @@ __[Ethernaut](https://ethernaut.openzeppelin.com/)__ is an interactive CtF (Capt
 You might want to take a dive into this repository if you got stuck in one of the challenges OR if you want to compare your solution with mine - because a cool thing with these challenges is that there's always >1 solution to the problem!
 
 The repo contains Solidity code with solutions (when it's applicable) and Foundry tests.
+
+## Disclaimer
+Obviously all the code provided purely and entirely for education. Do not use any of this code in production, as there the security guarantees are none.

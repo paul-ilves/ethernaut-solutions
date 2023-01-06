@@ -77,8 +77,8 @@ Resulting bytecode: 600a60??600039600a6000f3
 Size is 12 bytes, index starts from 0, we can safely assume that the 'offset' for CODECOPY should be '0x0c' (12 in hex form):
 600a600c600039600a6000f3
 
-Constructor bytecode + runtime bytecode = 600a600c600039600a6000f3602a60805260206080f3
-The constructor part will be thrown away after deployment, so only the size of the runtime part matters (and it's 10 bytes)
+Init bytecode + runtime bytecode = 600a600c600039600a6000f3602a60805260206080f3
+The init part will be thrown away after deployment, so only the size of the runtime part matters (and it's 10 bytes)
 
 Now let's write a Smart Contract which will deploy our minimalist Solver Smart Contract:
  */
@@ -88,15 +88,17 @@ contract Deployer {
 
     function create(bytes memory data) public {
         address contr;
+        uint256 size;
         assembly {
             contr := create(0, add(data, 0x20), mload(data))
+            size := extcodesize(contr)
         }
+        require(size <= 10, "contract size must be <= 10 bytes!");
         contrAddr = contr;
     }
 }
 
 /*
- Pass the complete bytecode and you grab the address from 'contrAddr'.
- Pass the address to Ethernaut 
+ Pass the complete bytecode (as 0x600a600c600039600a6000f3602a60805260206080f3), grab yourself a well-deserved hot cup of coffee and enjoy. 
  V●ᴥ●V
   */
