@@ -8,4 +8,4 @@ You might want to take a dive into this repository if you got stuck in one of th
 The repo contains Solidity code with solutions (when it's applicable) and Foundry tests.
 
 ## Disclaimer
-Obviously all the code provided purely and entirely for education. Do not use any of this code in production, as there the security guarantees are none.
+Obviously all the code is provided on purely educational and demonstrational grounds. Do not use any of this code in production, as the security guarantees are none.
